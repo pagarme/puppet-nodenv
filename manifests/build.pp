@@ -120,7 +120,7 @@ define nodenv::build (
     cwd     => "${install_dir}/plugins/node-build",
     user    => 'root',
     unless  => "test -d ${install_dir}/versions/${title}",
-    require => Nodenv::Plugin['OiNutter/node-build'],
+    require => Nodenv::Plugin['nodenv/node-build'],
   }->
   exec { "nodenv-install-${title}":
     # patch file must be read from stdin only if supplied

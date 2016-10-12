@@ -56,7 +56,7 @@
 # Copyright 2013 Justin Downing
 #
 class nodenv (
-  $repo_path   = 'https://github.com/OiNutter/nodenv.git',
+  $repo_path   = 'https://github.com/nodenv/nodenv.git',
   $install_dir = '/usr/local/nodenv',
   $owner       = 'root',
   $group       = $nodenv::deps::group,
