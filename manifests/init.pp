@@ -67,6 +67,7 @@ class nodenv (
   exec { 'git-clone-nodenv':
     command => "/usr/bin/git clone ${nodenv::repo_path} ${install_dir}",
     creates => $install_dir,
+    cwd     => '/',
     user    => $owner,
     require => Package['git'],
   }
