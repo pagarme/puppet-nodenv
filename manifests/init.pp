@@ -56,7 +56,7 @@
 # Copyright 2013 Justin Downing
 #
 class nodenv (
-  $repo_path   = 'https://github.com/OiNutter/nodenv.git',
+  $repo_path   = 'https://github.com/nodenv/nodenv.git',
   $install_dir = '/usr/local/nodenv',
   $owner       = 'root',
   $group       = $nodenv::deps::group,
@@ -67,6 +67,7 @@ class nodenv (
   exec { 'git-clone-nodenv':
     command => "/usr/bin/git clone ${nodenv::repo_path} ${install_dir}",
     creates => $install_dir,
+    cwd     => '/',
     user    => $owner,
     require => Package['git'],
   }
